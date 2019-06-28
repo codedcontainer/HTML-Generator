@@ -1,0 +1,19 @@
+<div id="accordion">
+{{#times x}}
+  <div class="card">
+    <div class="card-header" id="heading_{{this}}">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_{{this}}" aria-expanded="true" aria-controls="collapse_{{this}}">
+          Card Title {{this}}
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapse_{{this}}" class="collapse" aria-labelledby="heading_{{this}}" data-parent="#accordion">
+      <div class="card-body">
+        Card Body {{this}}
+      </div>
+    </div>
+  </div>
+  {{/times}}
+</div>
