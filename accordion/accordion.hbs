@@ -1,0 +1,18 @@
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  {{#times x}}
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="heading_{{this}}">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{this}}" aria-expanded="true" aria-controls="collapse_{{this}}">
+          Panel Title {{this}}
+        </a>
+      </h4>
+    </div>
+    <div id="collapse_{{this}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_{{this}}">
+      <div class="panel-body">
+          Panel Body {{this}}
+      </div>
+    </div> 
+  </div> 
+  {{/times}}
+</div>
