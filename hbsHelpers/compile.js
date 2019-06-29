@@ -1,7 +1,11 @@
 const handlebars = require('handlebars');
-
-var exports = module.exports = {}; 
-exports.compile = (html, loops, data) =>{
+/**
+ * Takes a Raw hbs template and returns a compiled version
+ * @param {String} raw html
+ * @param {Integer} Number of times to loop
+ * @param {Object} Object of data, can be undefined 
+ */
+const compile = (html, loops, data) =>{
     return new Promise((resolve, reject, data) =>{
         try{                    
             const template = handlebars.compile(html)
@@ -10,8 +14,8 @@ exports.compile = (html, loops, data) =>{
         }
         catch(err){
             reject(err);
-        }
-           
+        }           
     }); 
 }
+export {compile};
 
