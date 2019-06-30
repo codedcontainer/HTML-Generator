@@ -17,4 +17,4 @@ node build/index.js
     - awaiting on custom functions that return a promise
 - ES6 compiling into ES5 using Babel
 - Categorizing run code in package.json
-- (Visual Studio intellisense with JSdoc)[http://www.codedcontainer.com/visual-studio-code-javascript-intellisense-with-jsdoc/]
+- [Visual Studio intellisense with JSdoc](http://www.codedcontainer.com/visual-studio-code-javascript-intellisense-with-jsdoc/)
