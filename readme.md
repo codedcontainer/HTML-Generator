@@ -1,5 +1,5 @@
 # HTML Auto Loader #
-An application that is written with node.js that automates the process of creating html tags such as bootstrap accordions and tables.
+An application that is written with node.js that automates the process of creating html such as bootstrap accordions and tables.
 
 ## How to run ##
 1. `npm install`
