@@ -5,11 +5,14 @@ const handlebars = require('handlebars');
  * @param {Integer} Number of times to loop
  * @param {Object} Object of data, can be undefined 
  */
-const compile = (html, loops, data) =>{
-    return new Promise((resolve, reject, data) =>{
-        try{                    
+const compile = (html, loops, jsData) =>{
+    return new Promise((resolve, reject) =>{
+        try{ 
+            if(jsData !== undefined )
+                html = html.replace("{{#times x}}", `{{#times ${loops}}}`);
+                                    
             const template = handlebars.compile(html)
-            const result = template(data); 
+            const result = template(jsData); 
             resolve(result); 
         }
         catch(err){

@@ -9,8 +9,6 @@ var _compile = require('../hbsHelpers/compile');
 
 var hbsCompile = _interopRequireWildcard(_compile);
 
-var _url = require('url');
-
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 var path = require('path');
@@ -29,14 +27,14 @@ var create = async function create(loops, version, data) {
     var custom;
     data !== undefined ? custom = "Data" : custom = "";
     console.log({ data: data, custom: custom });
-    if (data == undefined) data = {};else {
+    if (data !== undefined) {
         var jsonData = await readFile(path.resolve(data));
         jsonData = JSON.parse(jsonData);
         console.log(jsonData);
     }
     //if data is set then use a data file, else use placholder text template.
     var text = await readFile(path.resolve(__dirname, 'accordion' + version + custom + '.hbs'), 'utf8');
-    var hbs = await hbsCompile.compile(text, loops, jsonData.data);
+    var hbs = await hbsCompile.compile(text, loops, jsonData);
     return hbs;
 };
 exports.create = create;

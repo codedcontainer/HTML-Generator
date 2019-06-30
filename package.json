@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "watch 'npm run build' src",
+    "dev": "watch 'npm run build && npm run copy' src",
     "build": "babel src -d build",
+    "copy": "npx copyfiles -u=2 src/accordion/*.hbs build/accordion/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jason Utt",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "copyfiles": "^2.1.0",
     "watch": "^1.0.2"
   }
 }
