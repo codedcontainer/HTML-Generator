@@ -1,7 +1,7 @@
-# HTML Auto Loader #
+# HTML Generator #
 An application that is written with node.js that automates the process of creating html such as bootstrap accordions and tables.
 
-## How to run ##
+## How To Run ##
 1. `npm install`
 2. Use NPX to build `npx run build` or watch `npx run dev`
     * `npm run dev` will copy hbs files into /build folder
