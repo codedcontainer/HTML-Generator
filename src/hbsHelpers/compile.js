@@ -31,11 +31,11 @@ const tableTemplateCompile = (html, rows, columns,jsonData)=>{
         try{
             if(!jsonData)
             {
-                console.log('jsonUndefined');
                 html = html.replace("{{#times x}}", `{{#times ${rows}}}`);
                 html = html.replace("{{#times y}}", `{{#times ${columns}}}`);
             }
                 const template = handlebars.compile(html); 
+                console.log(jsonData);
                 const result = template(jsonData); 
                 resolve(result);
         }
@@ -44,7 +44,6 @@ const tableTemplateCompile = (html, rows, columns,jsonData)=>{
             }
     });
 }
-
 
 export {accordionTemplateCompile, tableTemplateCompile};
 

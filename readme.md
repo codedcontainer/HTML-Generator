@@ -1,5 +1,5 @@
 # HTML Generator #
-An application that is written with node.js that automates the process of creating html such as bootstrap accordions and tables.
+An application that is written with node.js and handlebars templates that automates the process of creating HTML. Uses HTML templates from Bootstrap (3 & 4) and generic templates.
 
 ## How To Run ##
 1. `npm install`
@@ -7,12 +7,16 @@ An application that is written with node.js that automates the process of creati
     * `npm run dev` will copy hbs files into /build folder
 3. Run the application see below examples
 
+##Templates##
+1. Bootstrap 3 & 4 Accordions
+2. Generic HTML Table 
+
 ### Bootstrap Accordion HTML Builder ###
 ~~~~
 node build/index.js
     --accordion     Bootstrap Accordion
     --tabs          # of loops without JSON data file
-    --data          JSON file of data 
+    --data          JSON file of data absolute path
     --type          Bootstrap version
 ~~~~
 ### Generic Table HTML Builder ###
@@ -21,7 +25,7 @@ node build/index.js
     --table         Generic Table
     --rows          # of rows
     --columns       # of columns 
-    --data          JSON file of data
+    --data          JSON file of data absolute path
 ~~~~
 
 ## What I Have Learned ##

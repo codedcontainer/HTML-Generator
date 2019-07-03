@@ -1,9 +1,9 @@
 <table>
-    {{#times x}}
+    {{#each row}}
     <tr>
-        {{#times y}}
-        <td></td>
-        {{/times}}
+        {{#each this}}
+        <td>{{this}}</td>
+        {{/each}}
     </tr>
-    {{/times}}
+    {{/each}}
 </table>

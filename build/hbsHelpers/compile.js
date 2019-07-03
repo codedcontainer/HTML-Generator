@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -13,7 +13,7 @@ var handlebars = require('handlebars');
 var accordionTemplateCompile = function accordionTemplateCompile(html, loops, jsData) {
     return new Promise(function (resolve, reject) {
         try {
-            if (!jsonData) html = html.replace("{{#times x}}", '{{#times ' + loops + '}}');
+            if (!jsonData) html = html.replace("{{#times x}}", "{{#times " + loops + "}}");
             var template = handlebars.compile(html);
             var result = template(jsData);
             resolve(result);
@@ -33,11 +33,11 @@ var tableTemplateCompile = function tableTemplateCompile(html, rows, columns, js
     return new Promise(function (resolve, reject) {
         try {
             if (!jsonData) {
-                console.log('jsonUndefined');
-                html = html.replace("{{#times x}}", '{{#times ' + rows + '}}');
-                html = html.replace("{{#times y}}", '{{#times ' + columns + '}}');
+                html = html.replace("{{#times x}}", "{{#times " + rows + "}}");
+                html = html.replace("{{#times y}}", "{{#times " + columns + "}}");
             }
             var template = handlebars.compile(html);
+            console.log(jsonData);
             var result = template(jsonData);
             resolve(result);
         } catch (err) {
