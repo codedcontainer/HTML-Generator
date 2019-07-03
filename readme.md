@@ -3,7 +3,9 @@ An application that is written with node.js that automates the process of creati
 
 ## How to run ##
 1. `npm install`
-2. Run the application see below examples
+2. Use NPX to build `npx run build` or watch `npx run dev`
+    * `npm run dev` will copy hbs files into /build folder
+3. Run the application see below examples
 
 ### Bootstrap Accordion HTML Builder ###
 ~~~~
