@@ -7,14 +7,14 @@ const argv = require('yargs').argv;
 //console.log(argv.data);
 if (argv.accordion) {
     hbsAccordion.create(argv.tabs, argv.type, argv.data).then((html) => {
-        console.log(html);
+        console.log('Accordion HTML written to build directory');
     }).catch((err) => {
         console.log(err);
     });
 }
 if (argv.table){
-    hbsTable.create(argv.rows, argv.columns ,argv.data).then((html)=>{
-        console.log(html); 
+    hbsTable.create(argv.rows, argv.columns ,argv.data).then(()=>{
+        console.log('Table HTML written to build directory');
     }).catch((err) => {
         console.log(err);
     });

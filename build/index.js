@@ -18,14 +18,14 @@ var argv = require('yargs').argv;
 //console.log(argv.data);
 if (argv.accordion) {
     hbsAccordion.create(argv.tabs, argv.type, argv.data).then(function (html) {
-        console.log(html);
+        console.log('Accordion HTML written to build directory');
     }).catch(function (err) {
         console.log(err);
     });
 }
 if (argv.table) {
-    hbsTable.create(argv.rows, argv.columns, argv.data).then(function (html) {
-        console.log(html);
+    hbsTable.create(argv.rows, argv.columns, argv.data).then(function () {
+        console.log('Table HTML written to build directory');
     }).catch(function (err) {
         console.log(err);
     });
