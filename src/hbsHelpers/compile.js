@@ -8,7 +8,7 @@ const handlebars = require('handlebars');
 const accordionTemplateCompile = (html, loops, jsData) =>{
     return new Promise((resolve, reject) =>{
         try{ 
-            if(jsData !== undefined )
+            if(!jsonData)
                 html = html.replace("{{#times x}}", `{{#times ${loops}}}`);                                    
             const template = handlebars.compile(html)
             const result = template(jsData); 
@@ -26,11 +26,12 @@ const accordionTemplateCompile = (html, loops, jsData) =>{
  * @param {Number=} rows Number of rows if no data import
  * @param {Number=} columns Number of columns if not data import
  */
-const tableTemplateCompile = (html, jsonData, rows = undefined, columns = undefined)=>{
+const tableTemplateCompile = (html, rows, columns,jsonData)=>{
     return new Promise((resolve,reject)=>{
         try{
-            if(jsonData !== undefined)
+            if(!jsonData)
             {
+                console.log('jsonUndefined');
                 html = html.replace("{{#times x}}", `{{#times ${rows}}}`);
                 html = html.replace("{{#times y}}", `{{#times ${columns}}}`);
             }

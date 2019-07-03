@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -13,7 +13,7 @@ var handlebars = require('handlebars');
 var accordionTemplateCompile = function accordionTemplateCompile(html, loops, jsData) {
     return new Promise(function (resolve, reject) {
         try {
-            if (jsData !== undefined) html = html.replace("{{#times x}}", "{{#times " + loops + "}}");
+            if (!jsonData) html = html.replace("{{#times x}}", '{{#times ' + loops + '}}');
             var template = handlebars.compile(html);
             var result = template(jsData);
             resolve(result);
@@ -29,15 +29,13 @@ var accordionTemplateCompile = function accordionTemplateCompile(html, loops, js
  * @param {Number=} rows Number of rows if no data import
  * @param {Number=} columns Number of columns if not data import
  */
-var tableTemplateCompile = function tableTemplateCompile(html, jsonData) {
-    var rows = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : undefined;
-    var columns = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;
-
+var tableTemplateCompile = function tableTemplateCompile(html, rows, columns, jsonData) {
     return new Promise(function (resolve, reject) {
         try {
-            if (jsonData !== undefined) {
-                html = html.replace("{{#times x}}", "{{#times " + rows + "}}");
-                html = html.replace("{{#times y}}", "{{#times " + columns + "}}");
+            if (!jsonData) {
+                console.log('jsonUndefined');
+                html = html.replace("{{#times x}}", '{{#times ' + rows + '}}');
+                html = html.replace("{{#times y}}", '{{#times ' + columns + '}}');
             }
             var template = handlebars.compile(html);
             var result = template(jsonData);

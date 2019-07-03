@@ -13,7 +13,7 @@ if (argv.accordion) {
     });
 }
 if (argv.table){
-    hbsTable.create(argv.rows, argv.columns,argv.data).then((html)=>{
+    hbsTable.create(argv.rows, argv.columns ,argv.data).then((html)=>{
         console.log(html); 
     }).catch((err) => {
         console.log(err);
