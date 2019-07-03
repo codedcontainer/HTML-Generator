@@ -1,16 +1,15 @@
 const handlebars = require('handlebars');
 /**
- * Takes a Raw hbs template and returns a compiled version
- * @param {String} raw html
- * @param {Integer} Number of times to loop
- * @param {Object} Object of data, can be undefined 
+ * Takes a Raw hbs accordion template and returns a compiled version
+ * @param {String} html html
+ * @param {Integer} loops of times to loop
+ * @param {Object} jsData of data, can be undefined 
  */
-const compile = (html, loops, jsData) =>{
+const accordionTemplateCompile = (html, loops, jsData) =>{
     return new Promise((resolve, reject) =>{
         try{ 
             if(jsData !== undefined )
-                html = html.replace("{{#times x}}", `{{#times ${loops}}}`);
-                                    
+                html = html.replace("{{#times x}}", `{{#times ${loops}}}`);                                    
             const template = handlebars.compile(html)
             const result = template(jsData); 
             resolve(result); 
@@ -20,5 +19,31 @@ const compile = (html, loops, jsData) =>{
         }           
     }); 
 }
-export {compile};
+/**
+ * Take a raw hbs table template and returns a compiled version
+ * @param {String} html precompiled handlebars html page 
+ * @param {JSON} jsonData data to insert into template 
+ * @param {Number=} rows Number of rows if no data import
+ * @param {Number=} columns Number of columns if not data import
+ */
+const tableTemplateCompile = (html, jsonData, rows = undefined, columns = undefined)=>{
+    return new Promise((resolve,reject)=>{
+        try{
+            if(jsonData !== undefined)
+            {
+                html = html.replace("{{#times x}}", `{{#times ${rows}}}`);
+                html = html.replace("{{#times y}}", `{{#times ${columns}}}`);
+            }
+                const template = handlebars.compile(html); 
+                const result = template(jsonData); 
+                resolve(result);
+        }
+            catch(err){
+                reject(err); 
+            }
+    });
+}
+
+
+export {accordionTemplateCompile, tableTemplateCompile};
 
