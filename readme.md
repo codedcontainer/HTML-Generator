@@ -7,7 +7,7 @@ An application that is written with node.js and handlebars templates that automa
     * `npm run dev` will copy hbs files into /build folder
 3. Run the application see below examples
 
-##Templates##
+## Templates ##
 1. Bootstrap 3 & 4 Accordions
 2. Generic HTML Table 
 
