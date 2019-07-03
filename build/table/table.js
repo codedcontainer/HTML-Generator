@@ -17,10 +17,10 @@ var create = async function create(rows, columns, data) {
     var custom;
     data !== undefined ? custom = "Data" : custom = "";
     if (data !== undefined) {
-        var jsonData = await readFile(path.resolve(data));
+        var jsonData = await readfile(path.resolve(data));
         jsonData = JSON.parese(jsonData);
     }
-    var text = await readFile(path.resolve(__dirname, 'table' + custom + '.hbs'));
+    var text = await readfile(path.resolve(__dirname, 'table' + custom + '.hbs'));
     var hbs = await (0, _compile.tableTemplateCompile)(text, data, rows, columns);
     return hbs;
 };

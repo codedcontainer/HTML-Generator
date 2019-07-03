@@ -30,3 +30,4 @@ node build/index.js
 - ES6 compiling into ES5 using Babel
 - Categorizing run code in package.json
 - [Visual Studio intellisense with JSdoc](http://www.codedcontainer.com/visual-studio-code-javascript-intellisense-with-jsdoc/)
+- Windows is picky about using both single and double quotes in your package.json scripts list instead you need to escape inside double quotes

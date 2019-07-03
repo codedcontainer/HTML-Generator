@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "watch 'npm run build && npm run copy' src",
+    "dev": "watch \"npm run build && npm run copy\" src",
     "build": "babel src -d build",
     "copy": "npx copyfiles -u=1 src/**/*.hbs build/",
     "test": "echo \"Error: no test specified\" && exit 1"
