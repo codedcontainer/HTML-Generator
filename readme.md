@@ -3,13 +3,23 @@ An application that is written with node.js that automates the process of creati
 
 ## How to run ##
 1. `npm install`
-2. Run the application see below for an example command
+2. Run the application see below examples
+
+### Bootstrap Accordion HTML Builder ###
 ~~~~
 node build/index.js
-    --accordion     type of component to build
-    --tabs          # of loops without json data file
-    --data          Json file of data 
-    --type          bootstrap version
+    --accordion     Bootstrap Accordion
+    --tabs          # of loops without JSON data file
+    --data          JSON file of data 
+    --type          Bootstrap version
+~~~~
+### Generic Table HTML Builder ###
+~~~~
+node build/index.js
+    --table         Generic Table
+    --rows          # of rows
+    --columns       # of columns 
+    --data          JSON file of data
 ~~~~
 
 ## What I Have Learned ##

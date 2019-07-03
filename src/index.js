@@ -2,9 +2,6 @@ import * as hbsAccordion from './accordion/accordion';
 import * as hbsTable from './table/table'; 
 import './hbsHelpers/times'; 
 const argv = require('yargs').argv;
-const util = require('util');
-const fs = require('fs');
-const readFile = util.promisify(fs.readFile);
 
 //default accordion without a data file
 //console.log(argv.data);
