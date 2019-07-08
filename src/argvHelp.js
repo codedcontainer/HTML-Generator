@@ -16,18 +16,15 @@ const argv = require('yargs')
 .command('table [rows] [columns] [data]', "Create a generic HTML table", (yargs)=>{
     yargs.positional('rows',{
         describe: 'number of table rows <tr>',
-        type: 'number',
-        alias: 'r'
+        type: 'number'
     })
     .positional('columns',{
         describe: 'number of table columns <td>',
-        type: 'number',
-        alias: 'c'
+        type: 'number'
     })
     .positional('data',{
         describe: 'absolute path to JSON data file',
-        type: 'string',
-        alias: 'd'
+        type: 'string'
     })
 
 })

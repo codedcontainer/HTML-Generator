@@ -13,7 +13,7 @@ var handlebars = require('handlebars');
 var accordionTemplateCompile = function accordionTemplateCompile(html, loops, jsData) {
     return new Promise(function (resolve, reject) {
         try {
-            if (!jsonData) html = html.replace("{{#times x}}", "{{#times " + loops + "}}");
+            if (!jsData) html = html.replace("{{#times x}}", "{{#times " + loops + "}}");
             var template = handlebars.compile(html);
             var result = template(jsData);
             resolve(result);
@@ -37,7 +37,6 @@ var tableTemplateCompile = function tableTemplateCompile(html, rows, columns, js
                 html = html.replace("{{#times y}}", "{{#times " + columns + "}}");
             }
             var template = handlebars.compile(html);
-            console.log(jsonData);
             var result = template(jsonData);
             resolve(result);
         } catch (err) {

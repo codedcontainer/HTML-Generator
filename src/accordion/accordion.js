@@ -2,7 +2,9 @@ const path = require('path');
 const fs = require('fs');
 const util = require('util');
 const readFile = util.promisify(fs.readFile);
-import * as hbsCompile from '../hbsHelpers/compile';
+const write = util.promisify(fs.writeFile);
+
+import {accordionTemplateCompile} from '../hbsHelpers/compile';
 /**
  * Determine the type of accordion template to use based on the data being used. Will return * a handlebars compiled version of the code 
  * @param {Number} loops - Number of accordion tabs 
@@ -12,16 +14,15 @@ import * as hbsCompile from '../hbsHelpers/compile';
  */
 const create = async (loops,version, data) => {
     var custom; 
-    data !== undefined ? custom = "Data": custom = "";
-    console.log({data, custom});
-    if (data !== undefined) {
-        var jsonData = await readFile(path.resolve(data)); 
-        jsonData = JSON.parse(jsonData);
-        console.log(jsonData);
+    data !== undefined ? custom = "Data": custom = ""; 
+    if (data !== undefined){
+        var jsonData = await readFile(path.resolve(data));
+        jsonData = JSON.parse(jsonData); 
     }
     //if data is set then use a data file, else use placholder text template.
     const text = await readFile(path.resolve(__dirname, `accordion${version}${custom}.hbs`), 'utf8');
-    const hbs = await hbsCompile.compile(text,loops,jsonData); 
+    const hbs = await accordionTemplateCompile(text,loops,jsonData); 
+    await write(path.resolve(__dirname, '../','generatedHtml', "accordion.html"), hbs);
     return hbs;       
 } 
 export {create};

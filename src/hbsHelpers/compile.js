@@ -8,7 +8,7 @@ const handlebars = require('handlebars');
 const accordionTemplateCompile = (html, loops, jsData) =>{
     return new Promise((resolve, reject) =>{
         try{ 
-            if(!jsonData)
+            if(!jsData)
                 html = html.replace("{{#times x}}", `{{#times ${loops}}}`);                                    
             const template = handlebars.compile(html)
             const result = template(jsData); 
@@ -34,8 +34,7 @@ const tableTemplateCompile = (html, rows, columns,jsonData)=>{
                 html = html.replace("{{#times x}}", `{{#times ${rows}}}`);
                 html = html.replace("{{#times y}}", `{{#times ${columns}}}`);
             }
-                const template = handlebars.compile(html); 
-                console.log(jsonData);
+                const template = handlebars.compile(html);
                 const result = template(jsonData); 
                 resolve(result);
         }

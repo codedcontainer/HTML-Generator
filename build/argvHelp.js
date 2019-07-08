@@ -17,16 +17,13 @@ var argv = require('yargs').command('accordion [tabs] <type> [data]', "Create a 
 }).command('table [rows] [columns] [data]', "Create a generic HTML table", function (yargs) {
     yargs.positional('rows', {
         describe: 'number of table rows <tr>',
-        type: 'number',
-        alias: 'r'
+        type: 'number'
     }).positional('columns', {
         describe: 'number of table columns <td>',
-        type: 'number',
-        alias: 'c'
+        type: 'number'
     }).positional('data', {
         describe: 'absolute path to JSON data file',
-        type: 'string',
-        alias: 'd'
+        type: 'string'
     });
 }).help().argv;
 
