@@ -6,7 +6,8 @@ An application that is written with node.js and handlebars templates that automa
 2. Use NPX to build `npx run build` or watch `npx run dev`
     * `npm run dev` will copy hbs files into /build folder
 3. Make sure to include "generatedHtml" folder in /build
-3. Run the application see below examples
+4. View testData.json files for JSON input examples
+5. Run the application see below examples
 
 ## Templates ##
 1. Bootstrap 3 & 4 Accordions
