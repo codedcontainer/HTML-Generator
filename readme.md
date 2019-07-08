@@ -5,6 +5,7 @@ An application that is written with node.js and handlebars templates that automa
 1. `npm install`
 2. Use NPX to build `npx run build` or watch `npx run dev`
     * `npm run dev` will copy hbs files into /build folder
+3. Make sure to include "generatedHtml" folder in /build
 3. Run the application see below examples
 
 ## Templates ##
@@ -12,21 +13,8 @@ An application that is written with node.js and handlebars templates that automa
 2. Generic HTML Table 
 
 ### Bootstrap Accordion HTML Builder ###
-~~~~
-node build/index.js
-    --accordion     Bootstrap Accordion
-    --tabs          # of loops without JSON data file
-    --data          JSON file of data absolute path
-    --type          Bootstrap version
-~~~~
-### Generic Table HTML Builder ###
-~~~~
-node build/index.js
-    --table         Generic Table
-    --rows          # of rows
-    --columns       # of columns 
-    --data          JSON file of data absolute path
-~~~~
+- Run node /build/index.js --help to view builders
+    - Type --help on a command to learn more about a builder
 
 ## What I Have Learned ##
 - Async/await functions and their return type
